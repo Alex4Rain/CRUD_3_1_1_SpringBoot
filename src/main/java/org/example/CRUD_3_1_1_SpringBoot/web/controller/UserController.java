@@ -18,14 +18,14 @@ public class UserController {
         this.service = service;
     }
 
-    @GetMapping()
+    @GetMapping
     public String index(ModelMap model) {
         model.addAttribute("users", service.listUsers());
         model.addAttribute("user", new User());
         return "users/index";
     }
 
-    @PostMapping()
+    @PostMapping
     public String add(User user) {
         service.add(user);
         return "redirect:/";
